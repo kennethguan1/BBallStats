@@ -12,21 +12,21 @@
   <script src="./dist/main.js"></script>
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <link rel="icon" href="./src/images/icon.png">
-  <link rel="stylesheet" href="./dist/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-  <title>Heat Check</title>
+  <!-- <link rel="stylesheet" href="./dist/main.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> -->
+  <title>BBallStats</title>
 </head>
 
 <body>
-  <div class="modal-background hidden">
-    <div class="modal-child">
+  <div class="instructions hidden">
+    <div class="instructions-text">
       <h1>Click buttons below to compare stats of different NBA teams</h1>
       <p>
-        To display stats for teams, select 2 teams by clicking the buttons underneath the player cards.
+        Compare the 2018-2019 season stats for 2 teams by clicking the teams buttons.
       </p>
       <p>
-        To toggle different stats on the graph, click which stat you wish to display underneath the graph.
+        Compare specific season stats from 2000 to 2019 by clicking the stats buttons underneath the graph.
       </p>
     </div>
   </div>
@@ -34,71 +34,69 @@
   <div class="navbar">
     <h1>BBallStats</h1>
   </div>
-  <div class="main-content">
-    <div class="player-compare">
-      <h1 class="header">Team</h1>
-      <div class="player-card">
-        <div class="player-card-details">
+  <div class="main-display">
+    <div class="team-compare">
+      <h1 class="header">2018-2019 Season</h1>
+      <div class="team-profile">
+        <div class="team-profile-details">
           <div class="team-logo"></div>
-          <div class="player-name hidden"></div>
-          <div class="player-pos hidden"></div>
-          <div class="player-height hidden"></div>
-          <div class="player-stats">
+          <div class="team-name hidden"></div>
+          <div class="team-rank hidden"></div>
+          <div class="team-wins hidden"></div>
+          <div class="team-losses hidden"></div>
+          <div class="team-stats">
             <div class="points">PTS:</div>
-            <div class="rebounds">REB:</div>
+            <div class="field-goal%">FG%:</div>
+            <div class="3-point%">3P%:</div>
+            <div class="free-throw%">FT%:</div>
+            <div class="rebounds">TRB:</div>
             <div class="assists">AST:</div>
             <div class="steals">STL:</div>
             <div class="blocks">BLK:</div>
-            <div class="turnovers">TO:</div>
-            <div class="fouls">FO:</div>
+            <div class="turnovers">TOV:</div>
+            <div class="fouls">PF:</div>
           </div>
         </div>
-        <div class="player-card-details">
+        <div class="team-profile-details">
           <div class="team-logo"></div>
-          <div class="player-name hidden"></div>
-          <div class="player-pos hidden"></div>
-          <div class="player-height hidden"></div>
-          <div class="player-stats">
+          <div class="team-name hidden"></div>
+          <div class="team-rank hidden"></div>
+          <div class="team-wins hidden"></div>
+          <div class="team-losses hidden"></div>
+          <div class="team-stats">
             <div class="points">PTS:</div>
-            <div class="rebounds">REB:</div>
+            <div class="field-goal%">FG%:</div>
+            <div class="3-point%">3P%:</div>
+            <div class="free-throw%">FT%:</div>
+            <div class="rebounds">TRB:</div>
             <div class="assists">AST:</div>
             <div class="steals">STL:</div>
             <div class="blocks">BLK:</div>
-            <div class="turnovers">TO:</div>
-            <div class="fouls">FO:</div>
+            <div class="turnovers">TOV:</div>
+            <div class="fouls">PF:</div>
           </div>
         </div>
       </div>
-      <div class="player-select">
-        <button class="player-button">Celtics</button>
-        <button class="player-button">Lakers</button>
-        <button class="player-button">Bulls</button>
-        <button class="player-button">Spurs</button>
-        <button class="player-button">Warriors</button>
-        <button class="player-button">TrailBlazers</button>
-        <button class="player-button">Rockets</button>
-        <button class="player-button">Heat</button>
-        <button class="player-button">Knicks</button>
-        <button class="player-button">Nets</button>
-        <button class="player-button">Cavaliers</button>
-        <button class="player-button">Raptors</button>
+      <div class="all-teams">
+        <button class="team-button">Celtics</button>
+        <button class="team-button">Lakers</button>
       </div>
     </div>
-    <div class="graph-area">
-      <h1 class="header">SEASON</h1>
+    <div class="graph-display">
+      <h1 class="header">2010-2019 Seasons</h1>
       <div id="graph"></div>
       <div class="graph-legend"></div>
       <div class="graph-buttons">
         <button class="graph-button active">PTS</button>
-        <button class="graph-button">REB</button>
-        <button class="graph-button">AST</button>
-        <button class="graph-button">STL</button>
-        <button class="graph-button">BLK</button>
-        <button class="graph-button">TO</button>
-        <button class="graph-button">FO</button>
         <button class="graph-button">FG%</button>
         <button class="graph-button">3P%</button>
         <button class="graph-button">FT%</button>
+        <button class="graph-button">TRB</button>
+        <button class="graph-button">AST</button>
+        <button class="graph-button">STL</button>
+        <button class="graph-button">BLK</button>
+        <button class="graph-button">TOV</button>
+        <button class="graph-button">PF</button>
       </div>
     </div>
   </div>
