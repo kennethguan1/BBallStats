@@ -6,50 +6,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="BBallStats" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kennethguan1.github.io/BBallStats/" />
+  <meta property="og:image" content="" />
   <meta property="og:description"
     content="Data visualization web application comparing NBA teams' season stats." />
 
   <script src="./dist/main.js"></script>
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <link rel="icon" href="./src/images/icon.png">
-  <!-- <link rel="stylesheet" href="./dist/main.css"> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> -->
+  <link rel="icon" href="./src/images/favicon.png">
+  <link rel="stylesheet" href="./dist/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <title>BBallStats</title>
 </head>
 
 <body>
-  <div class="instructions hidden">
-    <div class="instructions-text">
-      <h1>Click buttons below to compare stats of different NBA teams</h1>
+    <div class="modal-background hidden">
+      <div class="modal-child">
+      <h1>NBA basketball over 2 Decades!</h1>
       <p>
-        Compare the 2018-2019 season stats for 2 teams by clicking the teams buttons.
+        Compare the 2019-2020 season between 2 teams by clicking the teams buttons.
       </p>
       <p>
-        Compare specific season stats from 2000 to 2019 by clicking the stats buttons underneath the graph.
+        Then check specific season statistics from 2000 to 2020 by clicking the stats buttons beneath the graph.
       </p>
     </div>
   </div>
 
   <div class="navbar">
-    <h1>BBallStats</h1>
+    <div class="logo">
+      <img class="logo-img" src="src/images/favicon.png">
+      <h1>BBallStats</h1>
+    </div>
+    <div class="profile-links">
+      <a href="https://www.linkedin.com/in/2702235a/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/kennethguan1" target="_blank">
+        <i class="fab fa-github-square"></i>
+      </a>
+    </div>
   </div>
-  <div class="main-display">
+  <div class="main-content">
     <div class="team-compare">
-      <h1 class="header">2018-2019 Season</h1>
-      <div class="team-profile">
-        <div class="team-profile-details">
+      <h1 class="header">2019-2020 Season</h1>
+      <div class="team-card">
+        <div class="team-card-details">
           <div class="team-logo"></div>
           <div class="team-name hidden"></div>
-          <div class="team-rank hidden"></div>
-          <div class="team-wins hidden"></div>
-          <div class="team-losses hidden"></div>
-          <div class="team-stats">
+          <div class="wins hidden"></div>
+          <div class="losses hidden"></div>
+          <div class="player-stats">
             <div class="points">PTS:</div>
-            <div class="field-goal%">FG%:</div>
-            <div class="3-point%">3P%:</div>
-            <div class="free-throw%">FT%:</div>
-            <div class="rebounds">TRB:</div>
+            <div class="field-goal">FG%:</div>
+            <div class="three-point">3P%:</div>
+            <div class="free-throw">FT%:</div>
+            <div class="rebounds">REB:</div>
             <div class="assists">AST:</div>
             <div class="steals">STL:</div>
             <div class="blocks">BLK:</div>
@@ -57,18 +69,17 @@
             <div class="fouls">PF:</div>
           </div>
         </div>
-        <div class="team-profile-details">
+        <div class="team-card-details">
           <div class="team-logo"></div>
           <div class="team-name hidden"></div>
-          <div class="team-rank hidden"></div>
-          <div class="team-wins hidden"></div>
-          <div class="team-losses hidden"></div>
-          <div class="team-stats">
+          <div class="wins hidden"></div>
+          <div class="losses hidden"></div>
+          <div class="player-stats">
             <div class="points">PTS:</div>
-            <div class="field-goal%">FG%:</div>
-            <div class="3-point%">3P%:</div>
-            <div class="free-throw%">FT%:</div>
-            <div class="rebounds">TRB:</div>
+            <div class="field-goal">FG%:</div>
+            <div class="three-point">3P%:</div>
+            <div class="free-throw">FT%:</div>
+            <div class="rebounds">REB:</div>
             <div class="assists">AST:</div>
             <div class="steals">STL:</div>
             <div class="blocks">BLK:</div>
@@ -77,13 +88,13 @@
           </div>
         </div>
       </div>
-      <div class="all-teams">
-        <button class="team-button">Celtics</button>
-        <button class="team-button">Lakers</button>
+      <div class="player-select">
+        <button class="team-button">Boston Celtics</button>
+        <button class="team-button">LosAngeles Lakers</button>
       </div>
     </div>
-    <div class="graph-display">
-      <h1 class="header">2010-2019 Seasons</h1>
+    <div class="graph-area">
+      <h1 class="header">2000-2020 Seasons</h1>
       <div id="graph"></div>
       <div class="graph-legend"></div>
       <div class="graph-buttons">
@@ -91,7 +102,7 @@
         <button class="graph-button">FG%</button>
         <button class="graph-button">3P%</button>
         <button class="graph-button">FT%</button>
-        <button class="graph-button">TRB</button>
+        <button class="graph-button">REB</button>
         <button class="graph-button">AST</button>
         <button class="graph-button">STL</button>
         <button class="graph-button">BLK</button>
@@ -100,9 +111,14 @@
       </div>
     </div>
   </div>
-  <div class="footer">
-    <p>Kenneth Guan</p>
-  </div>
+    <div class="footer">
+      <p>Kenneth Guan</p>
+      <a href="https://www.linkedin.com/in/2702235a/" target="_blank">Linkedin</a>
+      -
+      <a href="https://github.com/kennethguan1" target="_blank">GitHub</a>
+      -
+      <div>Data sourced from basketball-reference.com</div>
+    </div>
 </body>
 
 </html>

@@ -1,4 +1,6 @@
 
+import './scripts/card';
+import './scripts/graph';
 
 document.addEventListener("DOMContentLoaded", () => {
   const modalBackground = document.querySelector(".modal-background");
