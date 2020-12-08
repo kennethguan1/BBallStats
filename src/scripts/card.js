@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const turnovers = Array.from(document.querySelectorAll(".turnovers"));
       const fouls = Array.from(document.querySelectorAll(".fouls"));
       
-      // PLAYER CARD METHODS
+      // TEAM CARD METHODS
       const addStats = (data) => {
         if (points[0].innerHTML === "PTS:") {
           // SET FIRST CARD DATA
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         teamLogo[idx].style.backgroundImage = ""
       }
 
-      // PLAYER BUTTONS
+      // TEAM BUTTONS
       const buttons = Array.from(document.querySelectorAll('.team-button'));
 
       buttons.forEach(button => {

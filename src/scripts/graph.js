@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const margin = { top: 30, right: 30, bottom: 45, left: 45 };
-  const width = 1000;
-  const height = 1000;
+  const margin = { top: 15, right: 50, bottom: 50, left: 30 };
+  const width = 1100;
+  const height = 550;
   const graphWidth = width - margin.left - margin.right;
   const graphHeight = height - margin.top - margin.bottom;
   
@@ -62,30 +62,42 @@ document.addEventListener('DOMContentLoaded', () => {
           svg.append("g")
             .attr('class', 'axis y-axis')
             .call(d3.axisLeft(yScale).tickValues([0, 2000, 4000, 6000, 8000, 10000]));
-        } else if (stat === "trb" || stat === "ast") {
-          yScale.domain([0, 15])
+        } else if (stat === "reb") {
+          yScale.domain([0, 4000])
 
           svg.append("g")
             .attr('class', 'axis y-axis')
-            .call(d3.axisLeft(yScale).tickValues([0, 3, 6, 9, 12, 15]));
+            .call(d3.axisLeft(yScale).tickValues([0, 800, 1600, 2400, 3200, 4000]));
+        } else if (stat === "ast") {
+          yScale.domain([0, 2500])
+
+          svg.append("g")
+            .attr('class', 'axis y-axis')
+            .call(d3.axisLeft(yScale).tickValues([0, 500, 1000, 1500, 2000, 2500]));
         } else if (stat === "stl" || stat === "blk") {
-          yScale.domain([0, 4])
+          yScale.domain([0, 1000])
 
           svg.append("g")
             .attr('class', 'axis y-axis')
-            .call(d3.axisLeft(yScale).tickValues([0, 1, 2, 3, 4]));
+            .call(d3.axisLeft(yScale).tickValues([0, 200, 400, 600, 800, 1000]));
         } else if (stat === "tov") {
-          yScale.domain([0, 6])
+          yScale.domain([0, 1500])
 
           svg.append("g")
             .attr('class', 'axis y-axis')
-            .call(d3.axisLeft(yScale).tickValues([0, 2, 4, 6]));
-        } else if (stat === "fg" || stat === "tp" || stat === "ft") {
+            .call(d3.axisLeft(yScale).tickValues([0, 300, 600, 900, 1200, 1500]));
+        } else if (stat === "fg%" || stat === "3p%" || stat === "ft%") {
           yScale.domain([0, 1])
 
           svg.append("g")
             .attr('class', 'axis y-axis')
-            .call(d3.axisLeft(yScale).tickValues([0, 0.2, 0.4, 0.6, 0.8, 1.0]));
+            .call(d3.axisLeft(yScale).tickValues([0, .2, .4, .6, .8, 1]));
+        } else if (stat === "pf") {
+          yScale.domain([0, 2000])
+
+          svg.append("g")
+            .attr('class', 'axis y-axis')
+            .call(d3.axisLeft(yScale).tickValues([0, 400, 800, 1200, 1600, 2000]));
         }
 
         // ADD LINE
@@ -190,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     legend.appendChild(legendElement);
   }
 
-  // PLAYER BUTTONS
+  // TEAM BUTTONS
   const teamButtons = Array.from(document.querySelectorAll('.team-button'));
   const colors = { red: false, dodgerblue: false };
 
@@ -213,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // REMOVE LEGEND ITEM
         legendItem.remove();
 
-        // DELETE PLAYER FROM CURRENT PLAYER OBJECT
+        // DELETE TEAM FROM CURRENT TEAM OBJECT
         delete currTeams[name];
 
         // TOGGLE FALSE DELETED COLOR
