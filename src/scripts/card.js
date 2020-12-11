@@ -20,42 +20,42 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // TEAM CARD METHODS
       const addStats = (data) => {
-        if (points[0].innerHTML === "PTS:") {
+        if (points[0].innerHTML === "Points:") {
           // SET FIRST CARD DATA
           name[0].innerHTML = `${data.name}`
           wins[0].innerHTML = `${data.w}`
           losses[0].innerHTML = `${data.l}`
-          points[0].innerHTML = `PTS: ${data.pts}`
-          fieldGoal[0].innerHTML = `FG%: ${data.fg}`
-          threePoint[0].innerHTML = `3P%: ${data.tp}`
-          freeThrow[0].innerHTML = `FT%: ${data.ft}`
-          rebounds[0].innerHTML = `REB: ${data.trb}`
-          assists[0].innerHTML = `AST: ${data.ast}`
-          steals[0].innerHTML = `STL: ${data.stl}`
-          blocks[0].innerHTML = `BLK: ${data.blk}`
-          turnovers[0].innerHTML = `TOV: ${data.tov}`
-          fouls[0].innerHTML = `PF: ${data.pf}`
+          points[0].innerHTML = `Points: ${data.pts}`
+          fieldGoal[0].innerHTML = `Field Goal%: ${data.fg}`
+          threePoint[0].innerHTML = `3 Points%: ${data.tp}`
+          freeThrow[0].innerHTML = `Free Throw%: ${data.ft}`
+          rebounds[0].innerHTML = `Rebounds: ${data.trb}`
+          assists[0].innerHTML = `Assists: ${data.ast}`
+          steals[0].innerHTML = `Steals: ${data.stl}`
+          blocks[0].innerHTML = `Blocks: ${data.blk}`
+          turnovers[0].innerHTML = `Turnovers: ${data.tov}`
+          fouls[0].innerHTML = `Personal Fouls: ${data.pf}`
 
           name[0].classList.remove('hidden')
           wins[0].classList.remove('hidden')
           losses[0].classList.remove('hidden')
 
           teamLogo[0].style.backgroundImage = `url(${data.img})`
-        } else if (points[1].innerHTML === "PTS:" && data.name !== name[0].innerHTML) {
+        } else if (points[1].innerHTML === "Points:" && data.name !== name[0].innerHTML) {
           // SET 2ND CARD DATA
           name[1].innerHTML = `${data.name}`
           wins[1].innerHTML = `${data.w}`
           losses[1].innerHTML = `${data.l}`
-          points[1].innerHTML = `PTS: ${data.pts}`
-          fieldGoal[1].innerHTML = `FG%: ${data.fg}`
-          threePoint[1].innerHTML = `3P%: ${data.tp}`
-          freeThrow[1].innerHTML = `FT%: ${data.ft}`
-          rebounds[1].innerHTML = `REB: ${data.trb}`
-          assists[1].innerHTML = `AST: ${data.ast}`
-          steals[1].innerHTML = `STL: ${data.stl}`
-          blocks[1].innerHTML = `BLK: ${data.blk}`
-          turnovers[1].innerHTML = `TOV: ${data.tov}`
-          fouls[1].innerHTML = `PF: ${data.pf}`
+          points[1].innerHTML = `Points: ${data.pts}`
+          fieldGoal[1].innerHTML = `Field Goal%: ${data.fg}`
+          threePoint[1].innerHTML = `3 Points%: ${data.tp}`
+          freeThrow[1].innerHTML = `Free Throw%: ${data.ft}`
+          rebounds[1].innerHTML = `Rebounds: ${data.trb}`
+          assists[1].innerHTML = `Assists: ${data.ast}`
+          steals[1].innerHTML = `Steals: ${data.stl}`
+          blocks[1].innerHTML = `Blocks: ${data.blk}`
+          turnovers[1].innerHTML = `Turnovers: ${data.tov}`
+          fouls[1].innerHTML = `Personal Fouls: ${data.pf}`
 
           name[1].classList.remove('hidden')
           wins[1].classList.remove('hidden')
@@ -83,16 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
         name[idx].innerHTML = ""
         wins[idx].innerHTML = ""
         losses[idx].innerHTML = ""
-        points[idx].innerHTML = "PTS:"
-        fieldGoal[idx].innerHTML = "FG%:"
-        threePoint[idx].innerHTML = "3P%:"
-        freeThrow[idx].innerHTML = "FT%:"
-        rebounds[idx].innerHTML = "REB:"
-        assists[idx].innerHTML = "AST:"
-        steals[idx].innerHTML = "STL:"
-        blocks[idx].innerHTML = "BLK:"
-        turnovers[idx].innerHTML = "TOV:"
-        fouls[idx].innerHTML = "PF:"
+        points[idx].innerHTML = "Points:"
+        fieldGoal[idx].innerHTML = "Field Goal%:"
+        threePoint[idx].innerHTML = "3 Points%:"
+        freeThrow[idx].innerHTML = "Free Throw%:"
+        rebounds[idx].innerHTML = "Rebounds:"
+        assists[idx].innerHTML = "Assists:"
+        steals[idx].innerHTML = "Steals:"
+        blocks[idx].innerHTML = "Blocks:"
+        turnovers[idx].innerHTML = "Turnovers:"
+        fouls[idx].innerHTML = "Personal Fouls:"
 
         name[idx].classList.add('hidden')
         wins[idx].classList.add('hidden')
