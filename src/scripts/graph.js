@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .attr('class', 'axis y-axis')
             .call(d3.axisLeft(yScale).tickValues([0, 2000, 4000, 6000, 8000, 10000]));
         } else if (stat === "reb") {
-          yScale.domain([0, 4000])
+          yScale.domain([0, 5000])
 
           svg.append("g")
             .attr('class', 'axis y-axis')
-            .call(d3.axisLeft(yScale).tickValues([0, 800, 1600, 2400, 3200, 4000]));
+            .call(d3.axisLeft(yScale).tickValues([0, 1000, 2000, 3000, 4000, 5000]));
         } else if (stat === "ast") {
           yScale.domain([0, 2500])
 
@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .attr('class', 'axis y-axis')
             .call(d3.axisLeft(yScale).tickValues([0, 200, 400, 600, 800, 1000]));
         } else if (stat === "tov") {
-          yScale.domain([0, 1500])
+          yScale.domain([0, 2000])
 
           svg.append("g")
             .attr('class', 'axis y-axis')
-            .call(d3.axisLeft(yScale).tickValues([0, 300, 600, 900, 1200, 1500]));
+            .call(d3.axisLeft(yScale).tickValues([0, 400, 800, 1200, 1600, 2000]));
         } else if (stat === "fg%" || stat === "3p%" || stat === "ft%") {
           yScale.domain([0, 1])
 
@@ -93,11 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .attr('class', 'axis y-axis')
             .call(d3.axisLeft(yScale).tickValues([0, .2, .4, .6, .8, 1]));
         } else if (stat === "pf") {
-          yScale.domain([0, 2000])
+          yScale.domain([0, 2500])
 
           svg.append("g")
             .attr('class', 'axis y-axis')
-            .call(d3.axisLeft(yScale).tickValues([0, 400, 800, 1200, 1600, 2000]));
+            .call(d3.axisLeft(yScale).tickValues([0, 500, 1000, 1500, 2000, 2500]));
         }
 
         // ADD LINE

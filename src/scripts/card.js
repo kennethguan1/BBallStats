@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       // TEAM CARD ELEMENTS
       const teamLogo = Array.from(document.querySelectorAll('.team-logo'));
-
+      
       const name = Array.from(document.querySelectorAll(".team-name"));
       const wins = Array.from(document.querySelectorAll(".wins"));
       const losses = Array.from(document.querySelectorAll(".losses"));
