@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Y-AXIS
         const yScale = d3.scaleLinear()
           .range([graphHeight, 0])
-            // debugger;
 
         if (stat === "pts") {
           yScale.domain([0, 10000])
